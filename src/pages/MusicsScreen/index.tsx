@@ -7,7 +7,7 @@ import { FaPlus } from "react-icons/fa";
 
 import { Header, Avatar, AddButton, Container, Title, Musics } from "./styles";
 
-function App() {
+function MusicsScreen() {
   return (
     <Container>
       <Content>
@@ -119,4 +119,4 @@ function App() {
   );
 }
 
-export default App;
+export default MusicsScreen;
