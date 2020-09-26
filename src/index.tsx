@@ -7,7 +7,7 @@ import "react-toastify/dist/ReactToastify.css";
 
 import MusicsScreen from "./pages/MusicsScreen";
 import SignupScreen from "./pages/SignupScreen";
-import SigninScreen from "./pages/SignupScreen";
+import SigninScreen from "./pages/SigninScreen";
 
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
