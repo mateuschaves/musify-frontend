@@ -13,7 +13,10 @@ ReactDOM.render(
   <React.StrictMode>
     <Router>
       <Switch>
-        <Route path="/">
+        <Route exact path="/">
+          <App />
+        </Route>
+        <Route exact path="/musics">
           <App />
         </Route>
       </Switch>
