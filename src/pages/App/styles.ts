@@ -1,12 +1,11 @@
 import styled from "styled-components";
 
-import { lighten } from "polished";
+import { darken } from "polished";
 
 export const Container = styled.div`
   display: flex;
   flex: 1;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
   background-color: #282828;
   top: 0;
@@ -40,11 +39,30 @@ export const Avatar = styled.img`
 `;
 
 export const AddButton = styled.button`
-  width: 80px;
-  height: 80px;
+  width: 60px;
+  height: 60px;
   border-radius: 90px;
-  background-color: ${lighten(0.2, "#282828")};
+  background-color: #1db954;
   border: none;
   cursor: pointer;
   outline: inherit;
+  transition: width 0.2s, height 0.2s;
+
+  &:hover {
+    background-color: ${darken(0.1, "#1db954")};
+    width: 54px;
+    height: 54px;
+  }
+
+  &:active {
+    background-color: ${darken(0.15, "#1db954")};
+  }
+`;
+
+export const Musics = styled.div`
+  overflow-y: scroll;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  margin-top: 24px;
 `;

@@ -1,9 +1,11 @@
 import React from "react";
 
 import Content from "../../components/Content";
+import Music from "../../components/Music";
+
 import { FaPlus } from "react-icons/fa";
 
-import { Header, Avatar, AddButton, Container, Title } from "./styles";
+import { Header, Avatar, AddButton, Container, Title, Musics } from "./styles";
 
 function App() {
   return (
@@ -19,6 +21,99 @@ function App() {
             <FaPlus color="#fff" size={22} />
           </AddButton>
         </Header>
+
+        <Musics>
+          <Music
+            track={1}
+            artist="Geraldo Vandre"
+            title="Pra não dizer que não falei das flores"
+            genre="MPB"
+          />
+          <Music
+            track={1}
+            artist="Geraldo Vandre"
+            title="Pra não dizer que não falei das flores"
+            genre="MPB"
+          />
+          <Music
+            track={1}
+            artist="Geraldo Vandre"
+            title="Pra não dizer que não falei das flores"
+            genre="MPB"
+          />
+          <Music
+            track={1}
+            artist="Geraldo Vandre"
+            title="Pra não dizer que não falei das flores"
+            genre="MPB"
+          />
+          <Music
+            track={1}
+            artist="Geraldo Vandre"
+            title="Pra não dizer que não falei das flores"
+            genre="MPB"
+          />
+          <Music
+            track={1}
+            artist="Geraldo Vandre"
+            title="Pra não dizer que não falei das flores"
+            genre="MPB"
+          />
+          <Music
+            track={1}
+            artist="Geraldo Vandre"
+            title="Pra não dizer que não falei das flores"
+            genre="MPB"
+          />
+          <Music
+            track={1}
+            artist="Geraldo Vandre"
+            title="Pra não dizer que não falei das flores"
+            genre="MPB"
+          />
+          <Music
+            track={1}
+            artist="Geraldo Vandre"
+            title="Pra não dizer que não falei das flores"
+            genre="MPB"
+          />
+          <Music
+            track={1}
+            artist="Geraldo Vandre"
+            title="Pra não dizer que não falei das flores"
+            genre="MPB"
+          />
+          <Music
+            track={1}
+            artist="Geraldo Vandre"
+            title="Pra não dizer que não falei das flores"
+            genre="MPB"
+          />
+          <Music
+            track={1}
+            artist="Geraldo Vandre"
+            title="Pra não dizer que não falei das flores"
+            genre="MPB"
+          />
+          <Music
+            track={1}
+            artist="Geraldo Vandre"
+            title="Pra não dizer que não falei das flores"
+            genre="MPB"
+          />
+          <Music
+            track={1}
+            artist="Geraldo Vandre"
+            title="Pra não dizer que não falei das flores"
+            genre="MPB"
+          />
+          <Music
+            track={1}
+            artist="Geraldo Vandre"
+            title="Pra não dizer que não falei das flores"
+            genre="MPB"
+          />
+        </Musics>
       </Content>
     </Container>
   );
