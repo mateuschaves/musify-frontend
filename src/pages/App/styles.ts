@@ -7,12 +7,13 @@ export const Container = styled.div`
   flex: 1;
   flex-direction: column;
   align-items: center;
-  background-color: #282828;
+  background-color: rgb(4, 4, 4);
   top: 0;
   bottom: 0;
   left: 0;
   right: 0;
   position: absolute;
+  overflow-y: scroll;
 `;
 
 export const Title = styled.p`
@@ -60,9 +61,7 @@ export const AddButton = styled.button`
 `;
 
 export const Musics = styled.div`
-  overflow-y: scroll;
   display: flex;
-  flex: 1;
   flex-direction: column;
   margin-top: 24px;
 `;

@@ -7,14 +7,19 @@ export const Container = styled.div`
   justify-content: space-around;
   align-items: center;
   margin: 8px;
-  background-color: #282828;
+  background-color: rgb(4, 4, 4);
   cursor: pointer;
   padding: 8px;
   height: 56px;
   border-radius: 8px;
+  transition: background-color 0.2s;
 
   &:hover {
-    background-color: ${lighten(0.2, "#282828")};
+    background-color: #282828;
+  }
+
+  &:active {
+    background-color: ${lighten(0.05, "#282828")};
   }
 `;
 export const Title = styled.span`
