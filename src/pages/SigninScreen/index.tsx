@@ -3,8 +3,8 @@ import React, { useState } from "react";
 import { Container, Input, Title, Form, Button } from "./styles";
 
 export default function SigninScreen() {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [email, setEmail] = useState<string>("");
+  const [password, setPassword] = useState<string>("");
 
   return (
     <Container>
