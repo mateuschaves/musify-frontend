@@ -1,10 +1,25 @@
 import React, { useState } from "react";
 
+import { signInActions } from "../../store/ducks/Auth/signIn";
+
+import { useDispatch } from "react-redux";
+
 import { Container, Input, Title, Form, Button } from "./styles";
 
 export default function SigninScreen() {
+  const dispatch = useDispatch();
+
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
+
+  function handleSignIn(email: string, password: string) {
+    dispatch(
+      signInActions.signIn({
+        email,
+        password,
+      })
+    );
+  }
 
   return (
     <Container>
@@ -24,7 +39,9 @@ export default function SigninScreen() {
           type="password"
         />
 
-        <Button>ENTRAR</Button>
+        <Button type="button" onClick={() => handleSignIn(email, password)}>
+          ENTRAR
+        </Button>
       </Form>
     </Container>
   );
