@@ -9,11 +9,18 @@ type MusicProps = {
   title: string;
   artist: string;
   genre: string;
+  onClick: any;
 };
 
-export default function Music({ track, title, artist, genre }: MusicProps) {
+export default function Music({
+  onClick,
+  track,
+  title,
+  artist,
+  genre,
+}: MusicProps) {
   return (
-    <Container>
+    <Container onClick={onClick}>
       <Row>
         <FaPlayCircle color="#1db954" size={20} />
         <Track># {track}</Track>

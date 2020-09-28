@@ -58,7 +58,7 @@ function NewMusicModal({ show, setShow }: NewMusicModalProps) {
       <Modal.Actions
         style={{ backgroundColor: lighten(0.05, "#282828"), color: "#fff" }}
       >
-        <Button onClick={() => setShow(false)}>Nope</Button>
+        <Button onClick={() => setShow(false)}>Cancelar</Button>
         <Button
           content="Adicionar"
           labelPosition="right"
