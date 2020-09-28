@@ -1,9 +1,11 @@
 import React from "react";
 import ReactDOM from "react-dom";
+
 import "./index.css";
+import "react-toastify/dist/ReactToastify.css";
+import "semantic-ui-css/semantic.min.css";
 
 import { ToastContainer } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
 
 import MusicsScreen from "./pages/MusicsScreen";
 import SignupScreen from "./pages/SignupScreen";

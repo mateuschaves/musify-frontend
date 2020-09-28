@@ -1,13 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
 
 import Content from "../../components/Content";
 import Music from "../../components/Music";
+
+import NewMusicModal from "../../components/NewMusicModal";
 
 import { FaPlus } from "react-icons/fa";
 
 import { Header, Avatar, AddButton, Container, Title, Musics } from "./styles";
 
 function MusicsScreen() {
+  const [show, setShow] = useState(true);
+
   return (
     <Container>
       <Content>
@@ -114,6 +118,7 @@ function MusicsScreen() {
             genre="MPB"
           />
         </Musics>
+        <NewMusicModal show={show} setShow={setShow} />
       </Content>
     </Container>
   );
