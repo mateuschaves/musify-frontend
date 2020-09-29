@@ -10,7 +10,7 @@ export const Input = styled.input`
   border: solid ${lighten(0.4, '#282828')} 0.2px;
   height: 40px;
   margin: 8px 0px 8px 0;
-  width: 450px;
+  width: 350px;
 `
 
 export const Select = styled.select`
@@ -22,7 +22,7 @@ export const Select = styled.select`
   border: solid ${lighten(0.4, '#282828')} 0.2px;
   height: 40px;
   margin: 8px 0px 8px 0;
-  width: 450px;
+  width: 350px;
 `
 
 export const Row = styled.div`

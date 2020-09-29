@@ -37,7 +37,7 @@ function ShowMusicModal({
       onOpen={() => setShow(true)}
       open={show}
       style={{
-        width: 400
+        width: 370
       }}
     >
       <Modal.Header
