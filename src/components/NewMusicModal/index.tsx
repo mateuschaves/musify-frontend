@@ -3,6 +3,10 @@ import { Button, Modal } from "semantic-ui-react";
 
 import { lighten } from "polished";
 
+import { useDispatch } from "react-redux";
+
+import { newMusicActions } from "../../store/ducks/Music/newMusic";
+
 import { Input, Row } from "./styles";
 
 type NewMusicModalProps = {
@@ -14,6 +18,20 @@ function NewMusicModal({ show, setShow }: NewMusicModalProps) {
   const [title, setTitle] = useState("");
   const [artist, setArtist] = useState("");
   const [genre, setGenre] = useState("");
+
+  const dispatch = useDispatch();
+
+  function handleNewMusic(title: string, artist: string, genre: string) {
+    dispatch(newMusicActions.newMusic({ title, artist, genre }));
+    setShow(false);
+    clearForm();
+  }
+
+  function clearForm() {
+    setTitle("");
+    setArtist("");
+    setGenre("");
+  }
 
   return (
     <Modal
@@ -63,7 +81,7 @@ function NewMusicModal({ show, setShow }: NewMusicModalProps) {
           content="Adicionar"
           labelPosition="right"
           icon="checkmark"
-          onClick={() => setShow(false)}
+          onClick={() => handleNewMusic(title, artist, genre)}
           positive
         />
       </Modal.Actions>

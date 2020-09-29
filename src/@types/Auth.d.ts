@@ -10,3 +10,9 @@ export type SignInProps = {
   password: string;
   history?: History<any>;
 };
+
+export type SignInStateProps = {
+  data: Object<any>;
+  loading: boolean;
+  error: any;
+};

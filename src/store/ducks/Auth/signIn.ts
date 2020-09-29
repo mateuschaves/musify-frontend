@@ -1,6 +1,7 @@
 import { SignInProps } from "../../../@types/Auth";
 
 import { ActionProps } from "../../../@types/General";
+import { SignInStateProps } from "../../../@types/Auth";
 
 export const signInTypes = {
   SIGNIN_REQUEST: "signIn/SIGNIN_REQUEST",
@@ -24,7 +25,7 @@ export const signInActions = {
   }),
 };
 
-const initialState = {
+const initialState: SignInStateProps = {
   data: {},
   loading: false,
   error: null,
