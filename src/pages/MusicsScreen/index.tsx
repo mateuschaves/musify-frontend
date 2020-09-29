@@ -4,13 +4,16 @@ import Content from '../../components/Content'
 import Music from '../../components/Music'
 import MusicLoading from '../../components/MusicLoading'
 
+// @ts-ignore
+import { Bounce } from 'react-activity'
+
 import NewMusicModal from '../../components/NewMusicModal'
 import ShowMusicModal from '../../components/ShowMusicModal'
 
 import { listMusicActions } from '../../store/ducks/Music/listMusic'
 
 import { RootStore } from '../../@types/General'
-import { ListMusicStateProps } from '../../@types/Music'
+import { ListMusicStateProps, NewMusicStateProps } from '../../@types/Music'
 
 import { useDispatch, useSelector } from 'react-redux'
 
@@ -47,6 +50,9 @@ function MusicsScreen() {
   const dispatch = useDispatch()
   const { musics, loading } = useSelector<RootStore, ListMusicStateProps>(
     (state) => state.listMusic
+  )
+  const newMusic = useSelector<RootStore, NewMusicStateProps>(
+    (state) => state.newMusic
   )
 
   useEffect(() => {
@@ -117,7 +123,11 @@ function MusicsScreen() {
             alt='avatar'
           />
           <AddButton onClick={() => setShowNewMusicModal(true)}>
-            <FaPlus color='#fff' size={22} />
+            {newMusic.loading ? (
+              <Bounce color='#fff' />
+            ) : (
+              <FaPlus color='#fff' size={22} />
+            )}
           </AddButton>
         </Header>
 

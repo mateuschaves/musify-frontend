@@ -1,23 +1,24 @@
-import React from "react";
-import ReactDOM from "react-dom";
+import React from 'react'
+import ReactDOM from 'react-dom'
 
-import "./config/reactotron";
+import './config/reactotron'
 
-import "./index.css";
-import "react-toastify/dist/ReactToastify.css";
-import "semantic-ui-css/semantic.min.css";
+import './index.css'
+import 'react-toastify/dist/ReactToastify.css'
+import 'semantic-ui-css/semantic.min.css'
+import 'react-activity/dist/react-activity.css'
 
-import { Provider as StoreProvider } from "react-redux";
-import { PersistGate } from "redux-persist/integration/react";
-import { persistor, store } from "./store";
+import { Provider as StoreProvider } from 'react-redux'
+import { PersistGate } from 'redux-persist/integration/react'
+import { persistor, store } from './store'
 
-import { ToastContainer } from "react-toastify";
+import { ToastContainer } from 'react-toastify'
 
-import MusicsScreen from "./pages/MusicsScreen";
-import SignupScreen from "./pages/SignupScreen";
-import SigninScreen from "./pages/SigninScreen";
+import MusicsScreen from './pages/MusicsScreen'
+import SignupScreen from './pages/SignupScreen'
+import SigninScreen from './pages/SigninScreen'
 
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 
 ReactDOM.render(
   <React.StrictMode>
@@ -25,16 +26,16 @@ ReactDOM.render(
       <PersistGate loading={null} persistor={persistor}>
         <Router>
           <Switch>
-            <Route exact path="/">
+            <Route exact path='/'>
               <MusicsScreen />
             </Route>
-            <Route exact path="/musics">
+            <Route exact path='/musics'>
               <MusicsScreen />
             </Route>
-            <Route exact path="/signup">
+            <Route exact path='/signup'>
               <SignupScreen />
             </Route>
-            <Route exact path="/signin">
+            <Route exact path='/signin'>
               <SigninScreen />
             </Route>
           </Switch>
@@ -44,5 +45,5 @@ ReactDOM.render(
     </StoreProvider>
   </React.StrictMode>,
 
-  document.getElementById("root")
-);
+  document.getElementById('root')
+)
