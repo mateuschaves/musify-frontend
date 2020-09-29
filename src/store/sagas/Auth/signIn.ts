@@ -1,32 +1,32 @@
-import { call, put, takeLatest } from "redux-saga/effects";
+import { call, put, takeLatest } from 'redux-saga/effects'
 
-import { ActionProps } from "../../../@types/General";
-import { AuthService } from "../../../services/api/resources";
+import { ActionProps } from '../../../@types/General'
+import { AuthService } from '../../../services/api/resources'
 
-import { storageHeaders } from "../../../utils";
+import { storageHeaders } from '../../../utils'
 
-import { signInActions, signInTypes } from "../../ducks/Auth/signIn";
+import { signInActions, signInTypes } from '../../ducks/Auth/signIn'
 
-export function* loginSaga({ payload, history }: ActionProps) {
+export function* signInSaga({ payload, history }: ActionProps) {
   try {
-    const { email, password } = payload;
+    const { email, password } = payload
 
     const response = yield call(AuthService.signIn, {
       email,
-      password,
-    });
+      password
+    })
 
-    const token = response?.data?.token;
+    const token = response?.data?.token
 
-    yield call(storageHeaders.saveHeaders, token);
+    yield call(storageHeaders.saveHeaders, token)
 
-    yield put(signInActions.signInSuccess(response.data));
-    yield put(history.push("/musics"));
+    yield put(signInActions.signInSuccess(response.data))
+    yield put(history.push('/musics'))
   } catch (error) {
-    yield put(signInActions.signInError(error));
+    yield put(signInActions.signInError(error))
   }
 }
 
 export function* watchSignIn() {
-  yield takeLatest(signInTypes.SIGNIN_REQUEST, loginSaga);
+  yield takeLatest(signInTypes.SIGNIN_REQUEST, signInSaga)
 }

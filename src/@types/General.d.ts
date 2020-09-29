@@ -3,7 +3,7 @@ import {
   ListMusicStateProps,
   RemoveMusicStateProps
 } from './Music'
-import { SignInStateProps } from './Auth'
+import { SignInStateProps, SignUpStateProps } from './Auth'
 
 export type ActionProps = {
   payload?: any
@@ -12,6 +12,7 @@ export type ActionProps = {
 }
 
 export interface RootStore {
+  signUp: SignUpStateProps
   signIn: SignInStateProps
   newMusic: NewMusicStateProps
   listMusic: ListMusicStateProps
