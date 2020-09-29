@@ -1,6 +1,6 @@
-import styled from "styled-components";
+import styled from 'styled-components'
 
-import { darken } from "polished";
+import { darken } from 'polished'
 
 export const Container = styled.div`
   display: flex;
@@ -14,7 +14,7 @@ export const Container = styled.div`
   right: 0;
   position: absolute;
   overflow-y: scroll;
-`;
+`
 
 export const Title = styled.p`
   color: #fff;
@@ -23,7 +23,7 @@ export const Title = styled.p`
   white-space: pre-line;
   justify-self: flex-start;
   align-self: flex-start;
-`;
+`
 
 export const Header = styled.header`
   display: flex;
@@ -31,13 +31,13 @@ export const Header = styled.header`
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-`;
+`
 
 export const Avatar = styled.img`
   width: 90px;
   height: 90px;
   border-radius: 90px;
-`;
+`
 
 export const AddButton = styled.button`
   width: 60px;
@@ -50,19 +50,26 @@ export const AddButton = styled.button`
   transition: width 0.2s, height 0.2s;
 
   &:hover {
-    background-color: ${darken(0.1, "#1db954")};
+    background-color: ${darken(0.1, '#1db954')};
     width: 54px;
     height: 54px;
   }
 
   &:active {
-    background-color: ${darken(0.15, "#1db954")};
+    background-color: ${darken(0.15, '#1db954')};
   }
-`;
+`
 
 export const Musics = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
   margin-top: 24px;
-`;
+`
+
+export const Loadings = styled.div`
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  justify-content: flex-start;
+`
