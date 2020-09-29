@@ -9,7 +9,7 @@ import { toast } from 'react-toastify'
 
 import { newMusicActions } from '../../store/ducks/Music/newMusic'
 
-import { Input, Row } from './styles'
+import { Input, Row, Select } from './styles'
 
 type NewMusicModalProps = {
   show: boolean
@@ -77,12 +77,18 @@ function NewMusicModal({ show, setShow }: NewMusicModalProps) {
             type='text'
           />
 
-          <Input
+          <Select
             placeholder='Gênero'
             value={genre}
             onChange={(e) => setGenre(e.target.value)}
-            type='text'
-          />
+          >
+            <option value='POP'> POP </option>
+            <option value='FUNK'> FUNK </option>
+            <option value='SAMBA'> SAMBA </option>
+            <option value='ROCK'> ROCK </option>
+            <option value='MPB'> MPB </option>
+            <option value='PAGODE'> PAGODE </option>
+          </Select>
         </Row>
       </Modal.Content>
       <Modal.Actions

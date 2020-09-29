@@ -13,6 +13,18 @@ export const Input = styled.input`
   width: 450px;
 `
 
+export const Select = styled.select`
+  border-radius: 4px;
+  color: rgb(4, 4, 4);
+  background-color: #fff;
+  padding: 8px;
+  outline: inherit;
+  border: solid ${lighten(0.4, '#282828')} 0.2px;
+  height: 40px;
+  margin: 8px 0px 8px 0;
+  width: 450px;
+`
+
 export const Row = styled.div`
   display: flex;
   flex: 1;
