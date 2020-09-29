@@ -24,10 +24,10 @@ function NewMusicModal({ show, setShow }: NewMusicModalProps) {
   const dispatch = useDispatch()
 
   function handleNewMusic(title: string, artist: string, genre: string) {
-    if (!validateForm(title, artist, genre))
-      return toast('Preencha corretamente as informações da música', {
-        type: 'error'
-      })
+    // if (!validateForm(title, artist, genre))
+    //   return toast('Preencha corretamente as informações da música', {
+    //     type: 'error'
+    //   })
 
     dispatch(newMusicActions.newMusic({ title, artist, genre }))
     setShow(false)
