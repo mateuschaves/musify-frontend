@@ -7,7 +7,7 @@ import { storageHeaders } from "../../../utils";
 
 import { signInActions, signInTypes } from "../../ducks/Auth/signIn";
 
-export function* loginSaga({ payload }: ActionProps) {
+export function* loginSaga({ payload, history }: ActionProps) {
   try {
     const { email, password } = payload;
 
@@ -16,13 +16,12 @@ export function* loginSaga({ payload }: ActionProps) {
       password,
     });
 
-    console.log(response);
-
     const token = response?.data?.token;
 
     yield call(storageHeaders.saveHeaders, token);
 
     yield put(signInActions.signInSuccess(response.data));
+    yield put(history.push("/musics"));
   } catch (error) {
     yield put(signInActions.signInError(error));
   }

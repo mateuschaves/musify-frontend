@@ -2,12 +2,15 @@ import React, { useState } from "react";
 
 import { signInActions } from "../../store/ducks/Auth/signIn";
 
+import { useHistory } from "react-router-dom";
+
 import { useDispatch } from "react-redux";
 
 import { Container, Input, Title, Form, Button } from "./styles";
 
 export default function SigninScreen() {
   const dispatch = useDispatch();
+  const history = useHistory();
 
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
@@ -17,6 +20,7 @@ export default function SigninScreen() {
       signInActions.signIn({
         email,
         password,
+        history,
       })
     );
   }

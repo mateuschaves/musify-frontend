@@ -9,9 +9,10 @@ export const signInTypes = {
 };
 
 export const signInActions = {
-  signIn: ({ email, password }: SignInProps) => ({
+  signIn: ({ email, password, history }: SignInProps) => ({
     type: signInTypes.SIGNIN_REQUEST,
     payload: { email, password },
+    history,
   }),
   signInSuccess: (data: any) => ({
     type: signInTypes.SIGNIN_SUCCESS,
