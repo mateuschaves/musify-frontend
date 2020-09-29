@@ -14,6 +14,7 @@ import { listMusicActions } from '../../store/ducks/Music/listMusic'
 
 import { RootStore } from '../../@types/General'
 import { ListMusicStateProps, NewMusicStateProps } from '../../@types/Music'
+import { UserStateProps } from '../../@types/Auth'
 
 import { useDispatch, useSelector } from 'react-redux'
 
@@ -50,6 +51,9 @@ function MusicsScreen() {
   const dispatch = useDispatch()
   const { musics, loading } = useSelector<RootStore, ListMusicStateProps>(
     (state) => state.listMusic
+  )
+  const { user } = useSelector<RootStore, UserStateProps>(
+    (state) => state.loggedUser
   )
   const newMusic = useSelector<RootStore, NewMusicStateProps>(
     (state) => state.newMusic
@@ -116,7 +120,9 @@ function MusicsScreen() {
   return (
     <Container>
       <Content>
-        <Title>{['Bem vindo,', 'Mateus'].join('\n')}</Title>
+        <Title>
+          {['Bem vindo,', user?.user?.name.split(' ')[0]].join('\n')}
+        </Title>
         <Header>
           <Avatar
             src='https://api.adorable.io/avatars/90/mateus@happy.png'

@@ -3,7 +3,7 @@ import {
   ListMusicStateProps,
   RemoveMusicStateProps
 } from './Music'
-import { SignInStateProps, SignUpStateProps } from './Auth'
+import { SignInStateProps, SignUpStateProps, UserStateProps } from './Auth'
 
 export type ActionProps = {
   payload?: any
@@ -17,6 +17,7 @@ export interface RootStore {
   newMusic: NewMusicStateProps
   listMusic: ListMusicStateProps
   removeMusic: RemoveMusicStateProps
+  loggedUser: UserStateProps
 }
 
 declare module 'react-activity'

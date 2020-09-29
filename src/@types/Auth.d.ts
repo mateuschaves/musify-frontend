@@ -17,6 +17,21 @@ export type SignInStateProps = {
   error: any
 }
 
+export type UserProps = {
+  token: string
+  user: {
+    id: number
+    name: string
+    email: string
+  }
+}
+
+export type UserStateProps = {
+  user?: UserProps
+  loading: boolean
+  error: any
+}
+
 export type SignUpStateProps = {
   data: Object<any>
   loading: boolean

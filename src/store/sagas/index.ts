@@ -5,6 +5,7 @@ import { watchSignIn } from './Auth/signIn'
 import { watchNewMusic } from './Music/newMusic'
 import { watchListMusic } from './Music/listMusic'
 import { watchRemoveMusic } from './Music/removeMusic'
+import { watchLoggedUser } from './Auth/loggedUser'
 
 export default function* rootSaga() {
   yield all([
@@ -12,6 +13,7 @@ export default function* rootSaga() {
     watchSignIn(),
     watchNewMusic(),
     watchListMusic(),
-    watchRemoveMusic()
+    watchRemoveMusic(),
+    watchLoggedUser()
   ])
 }

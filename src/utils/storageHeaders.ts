@@ -1,9 +1,14 @@
-function saveHeaders(token: string) {
-  localStorage.setItem("@musify/token", token);
+import { UserProps } from '../@types/Auth'
+
+function saveHeaders({ token, user }: UserProps) {
+  localStorage.setItem('@musify/user', JSON.stringify({ token, user }))
 }
 
-function getHeaders(): string {
-  return localStorage.getItem("@musify/token") || "";
+function getHeaders(): UserProps {
+  const user: UserProps = JSON.parse(
+    localStorage.getItem('@musify/user') || JSON.stringify({})
+  )
+  return user
 }
 
-export default { saveHeaders, getHeaders };
+export default { saveHeaders, getHeaders }

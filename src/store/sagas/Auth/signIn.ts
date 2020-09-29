@@ -6,6 +6,7 @@ import { AuthService } from '../../../services/api/resources'
 import { storageHeaders } from '../../../utils'
 
 import { signInActions, signInTypes } from '../../ducks/Auth/signIn'
+import { userActions } from '../../ducks/Auth/loggedUser'
 
 export function* signInSaga({ payload, history }: ActionProps) {
   try {
@@ -16,13 +17,22 @@ export function* signInSaga({ payload, history }: ActionProps) {
       password
     })
 
-    const token = response?.data?.token
+    console.log(response)
 
-    yield call(storageHeaders.saveHeaders, token)
+    const { token, user } = response?.data
+
+    yield call(storageHeaders.saveHeaders, { user, token })
 
     yield put(signInActions.signInSuccess(response.data))
+    yield put(
+      userActions.user({
+        token,
+        user
+      })
+    )
     yield put(history.push('/musics'))
   } catch (error) {
+    console.log(error)
     yield put(signInActions.signInError(error))
   }
 }
