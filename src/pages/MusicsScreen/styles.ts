@@ -63,5 +63,6 @@ export const AddButton = styled.button`
 export const Musics = styled.div`
   display: flex;
   flex-direction: column;
+  justify-content: center;
   margin-top: 24px;
 `;

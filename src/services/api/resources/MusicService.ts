@@ -13,6 +13,14 @@ const newMusic = ({ title, artist, genre }: NewMusicProps) => {
   });
 };
 
+const listMusic = () => {
+  return client({
+    url: "musics",
+    method: "GET",
+  });
+};
+
 export default {
   newMusic,
+  listMusic,
 };

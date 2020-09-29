@@ -10,4 +10,5 @@ export type ActionProps = {
 export interface RootStore {
   signIn: SignInStateProps;
   newMusic: NewMusicStateProps;
+  listMusic: ListMusicStateProps;
 }

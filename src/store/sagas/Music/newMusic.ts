@@ -6,6 +6,7 @@ import { ActionProps } from "../../../@types/General";
 import { MusicService } from "../../../services/api/resources";
 
 import { newMusicActions, newMusicTypes } from "../../ducks/Music/newMusic";
+import { listMusicActions } from "../../ducks/Music/listMusic";
 
 export function* newMusicSaga({ payload }: ActionProps) {
   try {
@@ -18,6 +19,7 @@ export function* newMusicSaga({ payload }: ActionProps) {
     });
 
     yield put(newMusicActions.newMusicSuccess(response.data));
+    yield put(listMusicActions.listMusic());
 
     toast("Música adicionada com sucesso !", { type: "success" });
   } catch (error) {

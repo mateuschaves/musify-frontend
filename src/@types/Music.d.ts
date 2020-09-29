@@ -14,6 +14,12 @@ export type Music = {
 
 export type NewMusicStateProps = {
   loading: boolean;
+  data: Object<any>;
+  error: any;
+};
+
+export type ListMusicStateProps = {
+  loading: boolean;
   musics: Music[];
   error: any;
 };

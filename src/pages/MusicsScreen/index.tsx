@@ -1,10 +1,17 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 import Content from "../../components/Content";
 import Music from "../../components/Music";
 
 import NewMusicModal from "../../components/NewMusicModal";
 import ShowMusicModal from "../../components/ShowMusicModal";
+
+import { listMusicActions } from "../../store/ducks/Music/listMusic";
+
+import { RootStore } from "../../@types/General";
+import { ListMusicStateProps } from "../../@types/Music";
+
+import { useDispatch, useSelector } from "react-redux";
 
 import { FaPlus } from "react-icons/fa";
 
@@ -28,6 +35,15 @@ function MusicsScreen() {
     genre: "",
   });
 
+  const dispatch = useDispatch();
+  const { musics, loading } = useSelector<RootStore, ListMusicStateProps>(
+    (state) => state.listMusic
+  );
+
+  useEffect(() => {
+    dispatch(listMusicActions.listMusic());
+  }, [dispatch]);
+
   function handleSelectMusic(
     track: number,
     title: string,
@@ -44,6 +60,33 @@ function MusicsScreen() {
     setShowMusicModal(true);
   }
 
+  function renderContent(loading: boolean) {
+    if (loading) {
+    } else {
+      return (
+        <Musics>
+          {musics &&
+            musics.map((music) => (
+              <Music
+                onClick={() =>
+                  handleSelectMusic(
+                    music.id,
+                    music.artist,
+                    music.title,
+                    music.genre
+                  )
+                }
+                track={music.id}
+                artist={music.artist}
+                title={music.title}
+                genre={music.genre}
+              />
+            ))}
+        </Musics>
+      );
+    }
+  }
+
   return (
     <Container>
       <Content>
@@ -58,22 +101,8 @@ function MusicsScreen() {
           </AddButton>
         </Header>
 
-        <Musics>
-          <Music
-            onClick={() =>
-              handleSelectMusic(
-                1,
-                "Geraldo Vandre",
-                "Pra não dizer que não falei das flores",
-                "MPB"
-              )
-            }
-            track={1}
-            artist="Geraldo Vandre"
-            title="Pra não dizer que não falei das flores"
-            genre="MPB"
-          />
-        </Musics>
+        {renderContent(loading)}
+
         <NewMusicModal
           show={showNewMusicModal}
           setShow={setShowNewMusicModal}

@@ -24,7 +24,7 @@ export const newMusicActions = {
 };
 
 const initialState: NewMusicStateProps = {
-  musics: [],
+  data: {},
   loading: false,
   error: null,
 };
@@ -34,12 +34,12 @@ export const newMusicReducer = (state = initialState, action: ActionProps) => {
     case newMusicTypes.NEW_MUSIC_REQUEST:
       return { ...state, loading: true };
     case newMusicTypes.NEW_MUSIC_SUCCESS:
-      return { ...state, loading: false, musics: action.payload };
+      return { ...state, loading: false, data: action.payload };
     case newMusicTypes.NEW_MUSIC_ERROR:
       return {
         ...state,
         loading: false,
-        musics: [],
+        data: {},
         error: action.payload,
       };
     default:

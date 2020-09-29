@@ -7,7 +7,7 @@ import { storageHeaders } from "../../../utils";
 type ClientProps = {
   url: string;
   method: "GET" | "POST" | "PUT" | "DELETE" | "PATCH" | "OPTIONS";
-  data: object;
+  data?: object;
 };
 
 const instance = axios.create({
