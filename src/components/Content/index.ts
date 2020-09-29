@@ -9,6 +9,6 @@ export default styled.div`
   }
 
   @media (max-width: 700px) {
-    width: 420px;
+    width: 370px;
   }
 `
