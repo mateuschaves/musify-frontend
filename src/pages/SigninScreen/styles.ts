@@ -36,6 +36,10 @@ export const Input = styled.input`
   margin: 8px 0px 8px 0;
   width: 450px;
 
+  @media (max-width: 700px) {
+    width: 370px;
+  }
+
   &:focus {
     border-color: rgb(4, 4, 4);
   }
