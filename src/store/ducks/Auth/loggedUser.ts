@@ -3,6 +3,8 @@ import { UserProps, UserStateProps } from '../../../@types/Auth'
 
 export const userTypes = {
   USER_REQUEST: 'auth/USER_REQUEST',
+  USER_LOGOUT: 'auth/USER_LOGOUT_REQUEST',
+  USER_LOGOUT_SUCCESS: 'auth/USER_LOGOUT_SUCCESS',
   USER_SUCCESS: 'auth/USER_SUCCESS',
   USER_ERROR: 'auth/USER_ERROR'
 }
@@ -19,6 +21,10 @@ export const userActions = {
   userError: (error: any) => ({
     type: userTypes.USER_ERROR,
     payload: error
+  }),
+  userLogout: () => ({
+    type: userTypes.USER_LOGOUT,
+    payload: {}
   })
 }
 
@@ -40,6 +46,12 @@ export const userReducer = (state = initialState, action: ActionProps) => {
         loading: false,
         user: {},
         error: action.payload
+      }
+    case userTypes.USER_LOGOUT:
+      return {
+        ...state,
+        loading: true,
+        user: {}
       }
     default:
       return state

@@ -24,6 +24,31 @@ export const Title = styled.p`
   align-self: flex-start;
 `
 
+export const Row = styled.div`
+  display: flex;
+  flex: 1;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+`
+
+export const Logout = styled.p`
+  color: #fff;
+  font-weight: bold;
+  font-size: 34px;
+  white-space: pre-line;
+  cursor: pointer;
+  text-align: center;
+`
+
+export const EmptyMusicLabel = styled.span`
+  color: #fff;
+  font-weight: bold;
+  font-size: 24px;
+  text-align: center;
+  margin-top: 18px;
+`
+
 export const Header = styled.header`
   display: flex;
   flex: 1;

@@ -14,11 +14,18 @@ const errorHandler = (error: any, handleError: boolean) => {
         break
 
       case 400:
-        console.log(error.response)
         toast(error?.response?.data[0].msg, {
           type: 'error'
         })
         break
+
+      case 401:
+        window.location.href = '/signin'
+        toast(error?.response?.data?.message, {
+          type: 'info'
+        })
+        break
+
       default:
         toast('Algo de errado aconteceu, tente novamente', { type: 'error' })
         break

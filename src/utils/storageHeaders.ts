@@ -4,6 +4,10 @@ function saveHeaders({ token, user }: UserProps) {
   localStorage.setItem('@musify/user', JSON.stringify({ token, user }))
 }
 
+function clearHeaders() {
+  localStorage.removeItem('@musify/user')
+}
+
 function getHeaders(): UserProps {
   const user: UserProps = JSON.parse(
     localStorage.getItem('@musify/user') || JSON.stringify({})
@@ -11,4 +15,4 @@ function getHeaders(): UserProps {
   return user
 }
 
-export default { saveHeaders, getHeaders }
+export default { saveHeaders, getHeaders, clearHeaders }

@@ -1,3 +1,4 @@
-import constants from "./constants";
+import constants from './constants'
+import animations from './animations'
 
-export { constants };
+export { constants, animations }

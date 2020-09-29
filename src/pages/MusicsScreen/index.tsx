@@ -5,17 +5,25 @@ import Music from '../../components/Music'
 import MusicLoading from '../../components/MusicLoading'
 
 // @ts-ignore
-import { Bounce } from 'react-activity'
+import { Levels } from 'react-activity'
 
 import NewMusicModal from '../../components/NewMusicModal'
 import ShowMusicModal from '../../components/ShowMusicModal'
 
+// @ts-ignore
+import Lottie from 'lottie-react-web'
+import { animations } from '../../config'
+
 import { listMusicActions } from '../../store/ducks/Music/listMusic'
+import { userActions } from '../../store/ducks/Auth/loggedUser'
 
 import { RootStore } from '../../@types/General'
 import { ListMusicStateProps, NewMusicStateProps } from '../../@types/Music'
 import { UserStateProps } from '../../@types/Auth'
 
+import { storageHeaders } from '../../utils'
+
+import { useHistory } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 
 import { FaPlus } from 'react-icons/fa'
@@ -27,7 +35,10 @@ import {
   Container,
   Title,
   Musics,
-  Loadings
+  Loadings,
+  Logout,
+  EmptyMusicLabel,
+  Row
 } from './styles'
 
 type MusicSelected = {
@@ -49,6 +60,8 @@ function MusicsScreen() {
   })
 
   const dispatch = useDispatch()
+  const history = useHistory()
+
   const { musics, loading } = useSelector<RootStore, ListMusicStateProps>(
     (state) => state.listMusic
   )
@@ -62,6 +75,12 @@ function MusicsScreen() {
   useEffect(() => {
     dispatch(listMusicActions.listMusic())
   }, [dispatch])
+
+  function handleLogout() {
+    dispatch(userActions.userLogout())
+    storageHeaders.clearHeaders()
+    history.push('/signin')
+  }
 
   function handleSelectMusic(
     track: number,
@@ -92,7 +111,9 @@ function MusicsScreen() {
           <MusicLoading />
         </Loadings>
       )
-    } else {
+    }
+
+    if (musics.length) {
       return (
         <Musics>
           {musics &&
@@ -115,14 +136,34 @@ function MusicsScreen() {
         </Musics>
       )
     }
+
+    return (
+      <Musics>
+        <EmptyMusicLabel>
+          Parece que você ainda não tem nenhuma música cadastrada
+        </EmptyMusicLabel>
+        <Lottie
+          width={120}
+          height={120}
+          options={{
+            animationData: animations.Empty
+          }}
+        />
+      </Musics>
+    )
   }
 
   return (
     <Container>
       <Content>
-        <Title>
-          {['Bem vindo,', user?.user?.name.split(' ')[0]].join('\n')}
-        </Title>
+        <Row>
+          <Title>
+            {['Bem vindo,', user?.user?.name.split(' ')[0]].join('\n')}
+          </Title>
+
+          <Logout onClick={handleLogout}>Sair</Logout>
+        </Row>
+
         <Header>
           <Avatar
             src='https://api.adorable.io/avatars/90/mateus@happy.png'
@@ -130,7 +171,7 @@ function MusicsScreen() {
           />
           <AddButton onClick={() => setShowNewMusicModal(true)}>
             {newMusic.loading ? (
-              <Bounce color='#fff' />
+              <Levels color='#fff' />
             ) : (
               <FaPlus color='#fff' size={22} />
             )}

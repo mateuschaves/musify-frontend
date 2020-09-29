@@ -20,6 +20,8 @@
     "axios": "^0.20.0",
     "babel-plugin-dev-expression": "^0.2.2",
     "history": "^5.0.0",
+    "lottie-react-web": "^2.2.2",
+    "lottie-web": "^5.7.3",
     "polished": "^3.6.7",
     "react": "^16.13.1",
     "react-activity": "^1.2.2",
