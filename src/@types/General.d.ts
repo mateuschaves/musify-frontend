@@ -1,4 +1,8 @@
-import { NewMusicStateProps } from './Music'
+import {
+  NewMusicStateProps,
+  ListMusicStateProps,
+  RemoveMusicStateProps
+} from './Music'
 import { SignInStateProps } from './Auth'
 
 export type ActionProps = {
@@ -11,6 +15,7 @@ export interface RootStore {
   signIn: SignInStateProps
   newMusic: NewMusicStateProps
   listMusic: ListMusicStateProps
+  removeMusic: RemoveMusicStateProps
 }
 
 declare module 'react-activity'

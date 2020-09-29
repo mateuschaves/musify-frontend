@@ -1,10 +1,5 @@
-import styled from "styled-components";
-import { lighten } from "polished";
-
-export const Container = styled.div`
-  width: 720px;
-  height: 300px;
-`;
+import styled from 'styled-components'
+import { lighten } from 'polished'
 
 export const Input = styled.input`
   border-radius: 4px;
@@ -12,11 +7,11 @@ export const Input = styled.input`
   background-color: #fff;
   padding: 8px;
   outline: inherit;
-  border: solid ${lighten(0.4, "#282828")} 0.2px;
+  border: solid ${lighten(0.4, '#282828')} 0.2px;
   height: 40px;
   margin: 8px 0px 8px 0;
   width: 450px;
-`;
+`
 
 export const Row = styled.div`
   display: flex;
@@ -24,4 +19,4 @@ export const Row = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-`;
+`
