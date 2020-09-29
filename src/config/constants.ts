@@ -1,6 +1,6 @@
 const Env = {
   DEV_URL: 'http://localhost:3000/',
-  PROD_URL: 'https://musify-backend.herokuapp.com/'
+  PROD_URL: 'http://ec2-54-89-163-195.compute-1.amazonaws.com:3000/'
 }
 
 export default {
