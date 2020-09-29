@@ -6,9 +6,9 @@ import { useDispatch } from 'react-redux'
 
 import { signUpActions } from '../../store/ducks/Auth/signUp'
 
-import { useHistory } from 'react-router-dom'
+import { useHistory, Link } from 'react-router-dom'
 
-import { Container, Input, Title, Form, Button } from './styles'
+import { Container, Input, Title, Form, Button, SignInLabel } from './styles'
 
 export default function SignupScreen() {
   const [name, setName] = useState<string>('')
@@ -61,6 +61,10 @@ export default function SignupScreen() {
         >
           CADASTRAR
         </Button>
+
+        <SignInLabel>
+          Já possui uma conta ? <Link to='signin'>Clique aqui</Link>
+        </SignInLabel>
       </Form>
     </Container>
   )

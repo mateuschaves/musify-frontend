@@ -2,13 +2,13 @@ import React, { useState } from 'react'
 
 import { signInActions } from '../../store/ducks/Auth/signIn'
 
-import { useHistory } from 'react-router-dom'
+import { useHistory, Link } from 'react-router-dom'
 
 import { toast } from 'react-toastify'
 
 import { useDispatch } from 'react-redux'
 
-import { Container, Input, Title, Form, Button } from './styles'
+import { Container, Input, Title, Form, Button, SignUpLabel } from './styles'
 
 export default function SigninScreen() {
   const dispatch = useDispatch()
@@ -55,6 +55,10 @@ export default function SigninScreen() {
         <Button type='button' onClick={() => handleSignIn(email, password)}>
           ENTRAR
         </Button>
+
+        <SignUpLabel>
+          Ainda não possui uma conta ? <Link to='/signup'>Clique aqui</Link>
+        </SignUpLabel>
       </Form>
     </Container>
   )

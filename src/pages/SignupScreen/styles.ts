@@ -1,6 +1,6 @@
-import styled from "styled-components";
+import styled from 'styled-components'
 
-import { lighten } from "polished";
+import { lighten } from 'polished'
 
 export const Container = styled.div`
   display: flex;
@@ -15,7 +15,7 @@ export const Container = styled.div`
   right: 0;
   position: absolute;
   overflow-y: scroll;
-`;
+`
 
 export const Title = styled.h1`
   color: rgb(4, 4, 4);
@@ -23,7 +23,7 @@ export const Title = styled.h1`
   font-size: 30px;
   white-space: pre-line;
   text-align: left;
-`;
+`
 
 export const Input = styled.input`
   border-radius: 4px;
@@ -31,7 +31,7 @@ export const Input = styled.input`
   background-color: #fff;
   padding: 8px;
   outline: inherit;
-  border: solid ${lighten(0.4, "#282828")} 0.2px;
+  border: solid ${lighten(0.4, '#282828')} 0.2px;
   height: 40px;
   margin: 8px 0px 8px 0;
   width: 450px;
@@ -39,12 +39,12 @@ export const Input = styled.input`
   &:focus {
     border-color: rgb(4, 4, 4);
   }
-`;
+`
 
 export const Form = styled.form`
   display: flex;
   flex-direction: column;
-`;
+`
 
 export const Button = styled.button`
   height: 48px;
@@ -64,4 +64,10 @@ export const Button = styled.button`
     background-color: #616467;
     color: #fff;
   }
-`;
+`
+
+export const SignInLabel = styled.span`
+  color: rgb(4, 4, 4);
+  font-size: 16px;
+  text-align: center;
+`
