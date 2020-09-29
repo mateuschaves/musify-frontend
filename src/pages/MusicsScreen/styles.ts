@@ -21,7 +21,6 @@ export const Title = styled.p`
   font-weight: bold;
   font-size: 34px;
   white-space: pre-line;
-  justify-self: flex-start;
   align-self: flex-start;
 `
 
