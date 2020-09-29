@@ -5,6 +5,8 @@ import { lighten } from 'polished'
 
 import { useDispatch } from 'react-redux'
 
+import { toast } from 'react-toastify'
+
 import { newMusicActions } from '../../store/ducks/Music/newMusic'
 
 import { Input, Row } from './styles'
@@ -15,16 +17,26 @@ type NewMusicModalProps = {
 }
 
 function NewMusicModal({ show, setShow }: NewMusicModalProps) {
-  const [title, setTitle] = useState('')
-  const [artist, setArtist] = useState('')
-  const [genre, setGenre] = useState('')
+  const [title, setTitle] = useState<string>('')
+  const [artist, setArtist] = useState<string>('')
+  const [genre, setGenre] = useState<string>('')
 
   const dispatch = useDispatch()
 
   function handleNewMusic(title: string, artist: string, genre: string) {
+    if (!validateForm(title, artist, genre))
+      return toast('Preencha corretamente as informações da música', {
+        type: 'error'
+      })
+
     dispatch(newMusicActions.newMusic({ title, artist, genre }))
     setShow(false)
     clearForm()
+  }
+
+  function validateForm(title: string, artist: string, genre: string) {
+    if (!title || !artist || !genre) return false
+    else return true
   }
 
   function clearForm() {
@@ -80,7 +92,7 @@ function NewMusicModal({ show, setShow }: NewMusicModalProps) {
         <Button
           content='Adicionar'
           labelPosition='right'
-          icon='checkmark'
+          icon='plus'
           onClick={() => handleNewMusic(title, artist, genre)}
           positive
         />

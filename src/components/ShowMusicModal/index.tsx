@@ -3,7 +3,7 @@ import { Button, Header, Modal, HeaderSubheader } from 'semantic-ui-react'
 
 import { removeMusicActions } from '../../store/ducks/Music/removeMusic'
 
-import { useDispatch, useSelector } from 'react-redux'
+import { useDispatch } from 'react-redux'
 
 import { lighten } from 'polished'
 
