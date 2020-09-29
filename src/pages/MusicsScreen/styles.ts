@@ -46,12 +46,9 @@ export const AddButton = styled.button`
   border: none;
   cursor: pointer;
   outline: inherit;
-  transition: width 0.2s, height 0.2s;
 
   &:hover {
     background-color: ${darken(0.1, '#1db954')};
-    width: 54px;
-    height: 54px;
   }
 
   &:active {
