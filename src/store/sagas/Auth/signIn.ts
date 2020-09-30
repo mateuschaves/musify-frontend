@@ -17,8 +17,6 @@ export function* signInSaga({ payload, history }: ActionProps) {
       password
     })
 
-    console.log(response)
-
     const { token, user } = response?.data
 
     yield call(storageHeaders.saveHeaders, { user, token })
@@ -32,7 +30,6 @@ export function* signInSaga({ payload, history }: ActionProps) {
     )
     yield put(history.push('/musics'))
   } catch (error) {
-    console.log(error)
     yield put(signInActions.signInError(error))
   }
 }

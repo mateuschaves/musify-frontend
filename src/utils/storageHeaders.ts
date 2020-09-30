@@ -1,7 +1,10 @@
 import { UserProps } from '../@types/Auth'
 
-function saveHeaders({ token, user }: UserProps) {
-  localStorage.setItem('@musify/user', JSON.stringify({ token, user }))
+function saveHeaders({ token, user }: UserProps): Promise<void> {
+  return new Promise((resolve) => {
+    localStorage.setItem('@musify/user', JSON.stringify({ token, user }))
+    resolve()
+  })
 }
 
 function clearHeaders() {
