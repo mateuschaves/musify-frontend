@@ -41,7 +41,7 @@ export const Logout = styled.p`
   text-align: center;
 `
 
-export const EmptyMusicLabel = styled.span`
+export const EmptyMusicLabel = styled.p`
   color: #fff;
   font-weight: bold;
   font-size: 24px;

@@ -140,9 +140,6 @@ function MusicsScreen() {
 
     return (
       <Musics>
-        <EmptyMusicLabel>
-          Parece que você ainda não tem nenhuma música cadastrada
-        </EmptyMusicLabel>
         <Lottie
           width={120}
           height={120}
@@ -150,6 +147,10 @@ function MusicsScreen() {
             animationData: animations.Empty
           }}
         />
+
+        <EmptyMusicLabel>
+          Parece que você ainda não tem nenhuma música cadastrada
+        </EmptyMusicLabel>
       </Musics>
     )
   }
