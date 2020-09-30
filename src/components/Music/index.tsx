@@ -5,6 +5,7 @@ import { FaPlayCircle } from 'react-icons/fa'
 import { Container, Title, Artist, Genre, Column, Row, Track } from './styles'
 
 type MusicProps = {
+  id: number
   track: number
   title: string
   artist: string
@@ -14,6 +15,7 @@ type MusicProps = {
 
 export default function Music({
   onClick,
+  id,
   track,
   title,
   artist,

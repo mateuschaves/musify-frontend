@@ -8,6 +8,7 @@ import { useDispatch } from 'react-redux'
 import { lighten } from 'polished'
 
 type NewMusicModalProps = {
+  id: number
   show: boolean
   setShow: Function
   title: string
@@ -17,6 +18,7 @@ type NewMusicModalProps = {
 }
 
 function ShowMusicModal({
+  id,
   show,
   setShow,
   track,
@@ -26,8 +28,8 @@ function ShowMusicModal({
 }: NewMusicModalProps) {
   const dispatch = useDispatch()
 
-  function handleDeleteMusic(track: number) {
-    dispatch(removeMusicActions.removeMusic({ id: track }))
+  function handleDeleteMusic(id: number) {
+    dispatch(removeMusicActions.removeMusic({ id }))
     setShow(false)
   }
 
@@ -62,7 +64,7 @@ function ShowMusicModal({
           content='Remover'
           labelPosition='right'
           icon='trash'
-          onClick={() => handleDeleteMusic(track)}
+          onClick={() => handleDeleteMusic(id)}
           negative
         />
         <Button

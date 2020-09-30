@@ -42,6 +42,7 @@ import {
 } from './styles'
 
 type MusicSelected = {
+  id: number
   track: number
   title: string
   artist: string
@@ -53,6 +54,7 @@ function MusicsScreen() {
   const [showMusicModal, setShowMusicModal] = useState<boolean>(false)
 
   const [musicSelected, setMusicSelected] = useState<MusicSelected>({
+    id: 0,
     track: 0,
     title: '',
     artist: '',
@@ -83,12 +85,14 @@ function MusicsScreen() {
   }
 
   function handleSelectMusic(
+    id: number,
     track: number,
     title: string,
     artist: string,
     genre: string
   ) {
     setMusicSelected({
+      id,
       track,
       title,
       artist,
@@ -117,18 +121,20 @@ function MusicsScreen() {
       return (
         <Musics>
           {musics &&
-            musics.map((music) => (
+            musics.map((music, track) => (
               <Music
                 key={music.id}
                 onClick={() =>
                   handleSelectMusic(
                     music.id,
+                    track + 1,
                     music.artist,
                     music.title,
                     music.genre
                   )
                 }
-                track={music.id}
+                id={music.id}
+                track={track + 1}
                 artist={music.artist}
                 title={music.title}
                 genre={music.genre}
@@ -190,6 +196,7 @@ function MusicsScreen() {
           <ShowMusicModal
             show={showMusicModal}
             setShow={setShowMusicModal}
+            id={musicSelected.id}
             track={musicSelected.track}
             title={musicSelected.title}
             artist={musicSelected.artist}
