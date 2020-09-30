@@ -1,4 +1,4 @@
-#  Musify
+#  Musify frontend
 :green_heart: Gerenciador de músicas.
 
 <p float="left">
