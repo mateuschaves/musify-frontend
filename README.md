@@ -2,9 +2,9 @@
 :green_heart: Gerenciador de músicas.
 
 <p float="left">
-  <img src="https://i.imgur.com/IBdmKwL.png" width="310" height="500"/>
-  <img src="https://i.imgur.com/pj3Bm4b.png" width="310" height="500"/>
-  <img src="https://i.imgur.com/DmgmK2X.png" width="310" height="500"/>
+  <img src="https://i.imgur.com/IBdmKwL.png" width="300" height="500"/>
+  <img src="https://i.imgur.com/pj3Bm4b.png" width="300" height="500"/>
+  <img src="https://i.imgur.com/DmgmK2X.png" width="300" height="500"/>
 </p>
 
 [Demonstração (Hosted by AWS)](http://ec2-54-243-11-128.compute-1.amazonaws.com:8080)
