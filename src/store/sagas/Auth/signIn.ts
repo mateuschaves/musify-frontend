@@ -28,7 +28,7 @@ export function* signInSaga({ payload, history }: ActionProps) {
         user
       })
     )
-    yield put(history.push('/musics'))
+    history.push('/musics')
   } catch (error) {
     yield put(signInActions.signInError(error))
   }

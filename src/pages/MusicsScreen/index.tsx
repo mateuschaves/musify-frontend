@@ -119,6 +119,7 @@ function MusicsScreen() {
           {musics &&
             musics.map((music) => (
               <Music
+                key={music.id}
                 onClick={() =>
                   handleSelectMusic(
                     music.id,

@@ -19,7 +19,7 @@ export function* signUpSaga({ payload, history }: ActionProps) {
 
     yield put(signUpActions.signUpSuccess(response.data))
     toast('Cadastro realizado com sucesso !', { type: 'success' })
-    yield put(history.push('/signin'))
+    history.push('/signin')
   } catch (error) {
     yield put(signUpActions.signUpError(error))
   }
