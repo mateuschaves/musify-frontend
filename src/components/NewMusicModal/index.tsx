@@ -82,6 +82,9 @@ function NewMusicModal({ show, setShow }: NewMusicModalProps) {
             value={genre}
             onChange={(e) => setGenre(e.target.value)}
           >
+            <option value='' selected disabled>
+              Selecione o gênero
+            </option>
             <option value='POP'> POP </option>
             <option value='FUNK'> FUNK </option>
             <option value='SAMBA'> SAMBA </option>
