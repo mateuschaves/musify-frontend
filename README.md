@@ -18,7 +18,7 @@
 :white_check_mark: Typescript\
 :white_check_mark: React Hooks
 
-# Instalação
+## Instalação
 
 ```bash
 $ npm install
