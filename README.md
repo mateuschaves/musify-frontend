@@ -7,6 +7,8 @@
   <img src="https://i.imgur.com/DmgmK2X.png" width="310" height="500"/>
 </p>
 
+[Demonstração (Hosted by AWS)](http://ec2-54-243-11-128.compute-1.amazonaws.com:8080)
+
 ## Tecnologias
 
 :white_check_mark: React JS\
